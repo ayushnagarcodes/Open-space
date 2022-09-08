@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Open Space</title>
+    <link rel="stylesheet" href="style.css" type="text/css" />
+    <script src="script.js" defer></script>
+</head>
+<body>
+    <div class="space">
+        <div class="planet-area">
+            <img class="planet" src="graphics/planet.png" alt="planet" />
+            <img class="rocket" src="graphics/rocket.png" alt="rocket" />
+        </div>
+
+        <div class="control-panel">
+            <div class="input-password">
+                <input type="password" placeholder="Enter 'LaunchIt' to unlock" title="Password: LaunchIt" autofocus />
+                <input id="ok-btn" type="button" value="Ok" onclick="checkPassword(this)" />
+            </div>
+
+            <div class="mid-input-container">
+                <div class="adjust-panel">
+                    <div class="adjust-speed">
+                        <label for="adjust-speed-lever">Adjust speed:</label>
+                        <p>Slow</p>
+                        <input id="adjust-speed-lever" type="range" value="25" max="100" step="37.5" disabled />
+                    </div>
+                    <div class="adjust-trajectory">
+                        <label for="adjust-trajectory-lever">Adjust trajectory:</label>
+                        <p>40 degree</p>
+                        <input id="adjust-trajectory-lever" type="range" value="40" max="60" step="20" disabled />
+                    </div>
+                </div>
+                
+                <div class="normal-input-container">
+                    <div class="check-buttons">
+                        <input type="checkbox" title="Check me" disabled />
+                        <input type="checkbox" title="Check me" disabled />
+                        <input type="checkbox" title="Check me" disabled />
+                    </div>
+                    <div class="levers">
+                        <input type="range" title="Move the slider up" disabled />
+                        <input type="range" title="Move the slider up" disabled />
+                        <input type="range" title="Move the slider up" disabled />
+                    </div>
+                </div>
+            </div>
+
+            <div class="launch-control">
+                <button id="launch-btn" onclick="launchRocket()" disabled>
+                    <img src="graphics/rocket-icon.png" alt="launch" /><span>Launch</span>
+                </button>
+                <button id="relaunch-btn" onclick="reload()" disabled>
+                    <img src="graphics/reset.png" alt="re-launch" /><span>Re-Launch</span>
+                </button>
+            </div>
+        </div>
+
+        <div class="count-down active">
+            <p id="count-down-3">3..</p>
+            <p id="count-down-2">2...</p>
+            <p id="count-down-1">1..</p>
+            <p id="lift-off">liftoff!</p>
+        </div>
+    </div>
+</body>
+</html>
